@@ -1,7 +1,5 @@
 # Arc Programming Language
 
-Arc is a programming language with the goal of fast, and simple; compiled, and interpreted.
-
 ## Definition
 
 Signature: `<name> :: <type/scope>`
