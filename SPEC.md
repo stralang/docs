@@ -249,6 +249,21 @@ ptr = &100;
 // *ptr = 50; // Error
 ```
 
+### Meta Type
+
+Signature: `type`
+
+Meta types only get evaluated at compile-time,  
+and MUST have a known underlying type during code generation
+
+```arc
+_struct_type: type = struct {}
+_fn_type: type = fn();
+// NOTE: in both cases `type` will be inferred
+
+_struct_usage: _struct_type; // the "_struct_type" meta type becomes a `struct` type
+```
+
 ## Operators
 
 ### Assign
