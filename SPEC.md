@@ -2,9 +2,32 @@
 
 ## Definition
 
-Signature: `<name> :: <type/scope>`
+Signature: `<name>: <type> : <default>`
 
-A definition defines functions, structs, namespaces, etc.  
+An immutable variable
+
+```arc
+a: i32 : 100;
+
+// Infer from value
+b :: 50;
+```
+
+## Variable & Field
+
+Signature: `<name>: <type> = <default>`
+
+A mutable variable
+
+```arc
+a: i32 = 100;
+
+// Infer from value
+// NOTE: Fields must have a type
+b := 50;
+
+_const: const i32 = 100; // This is the same as a Definition
+```
 
 ## Function
 
@@ -55,18 +78,6 @@ Signature: `{ <definitions> }`
 Debug :: {
   println :: fn(...) { ... }
 }
-```
-
-## Variables/Fields
-
-Signature: `<name>: <type> = <default>;`
-
-```arc
-a: i32 = 100;
-
-// Infer from value
-// NOTE: Fields must have a type
-b := 50;
 ```
 
 ## Attributes
