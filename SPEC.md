@@ -50,7 +50,8 @@ Vector3 :: struct {
   y: f32,
   z: f32,
 
-  // If the first parameter's type is the struct then you can `<rhs>.add(<lhs>)`
+  // You can `<self>.add(<lhs>)`, -
+  // if the first parameter is a pointer to the struct (`*Vector3` or `*const Vector3`)
   add :: fn(self: *Vector3, lhs: *const Vector3) {
     ...
   }
