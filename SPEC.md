@@ -378,3 +378,20 @@ Returns the alignment, in bytes, of the inputted type
 ### Evaluator
 
 Resolves names, infers types, executes compile-time expressions, etc
+
+### Name Mangling
+
+Section: `<name length><name>`
+
+A mangled name is comprised of a file section, -  
+any amount of parent section's, and a definition section
+
+Examples:
+
+```
+8main.arc4main
+"main" in file "main.arc"
+
+11example.arc5Tests4Data
+"Data" in "Tests" in file "example.arc"
+```
