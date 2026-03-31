@@ -31,7 +31,7 @@ _const: const i32 = 100; // This is the same as a Definition
 
 ## Function
 
-Signature: `fn(<parameters>) <type> { <body> }`
+Signature: `fn([parameter, ...]) [type] [{ <body> }]`
 
 ```arc
 main :: fn() {}
@@ -196,6 +196,22 @@ asm { // RISC-V instructions
   li %t1, 5;
   add result, a, %t1;
 }
+```
+
+## Uninitialized
+
+Signature: `---`
+
+Used as a fields value to not zero-initialize the field.  
+It is also used as the body of a function to mark it as externally defined.  
+
+```arc
+// the value of `field` is undefined.
+// for global variables, it will be externally defined
+// NOTE: Uninitialized fields MUST have a known type
+field: i32 = ---;
+
+external_fn :: fn() ---; // Externally defined function
 ```
 
 ## Types
