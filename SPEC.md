@@ -81,18 +81,6 @@ Debug :: {
 }
 ```
 
-## Attributes
-
-Signature: `@<name>(<value>)`
-
-Sets `name` attribute to `value` for the next definition
-
-NOTE: attributes are compile-time
-
-## Builtin
-
-Signature: `#<name>`
-
 ## Return
 
 Signature: `return [expression];`
@@ -366,30 +354,40 @@ The Range operators are only supported in specific contexts
 | `..<` | `lhs` to `rhs`-1 |
 | `..=` | `lhs` to `rhs` |
 
-## Reflection
+## Attributes
+
+Signature: `@<name>(<value>)`
+
+Sets `name` attribute to `value` for the next definition
+
+NOTE: attributes are compile-time
+
+## Builtin
+
+Signature: `#<name>`
 
 ### typeid
 
-Signature: `typeid(<type>)`
+Signature: `#typeid(<type>)`
 
 Returns the type's unique `usize` identifier
 
 ### typeinfo
 
-Signature: `typeinfo(<type>)`
+Signature: `#typeinfo(<type>)`
 
 Returns a struct containing info about the type,  
 including: it's name, struct fields, function parameters, etc
 
 ### sizeof
 
-Signature: `sizeof(<type>)`
+Signature: `#sizeof(<type>)`
 
 Returns the size, in bytes, of the inputted type
 
 ### alignof
 
-Signature: `alignof(<type>)`
+Signature: `#alignof(<type>)`
 
 Returns the alignment, in bytes, of the inputted type
 
