@@ -89,6 +89,10 @@ Sets `name` attribute to `value` for the next definition
 
 NOTE: attributes are compile-time
 
+## Builtin
+
+Signature: `#<name>`
+
 ## Return
 
 Signature: `return [expression];`
@@ -157,9 +161,9 @@ Copies the `statement`/`body` to the exits of the enclosing body
 
 ## Import
 
-Signature: `import "<path>";`
+Signature: `import "[<package>:]<path>";`
 
-Imports the source code at `<path>` as a namespace (`{ ... }`)
+Imports the source code at `<path>`, relative to the importer or `<package>`, as a namespace (`{ ... }`)
 
 ## Comptime
 
@@ -167,7 +171,7 @@ Signature: `comptime <function/expression>`
 
 Functions or expressions with `comptime` appended are evaluated at compile-time.  
 
-A compile-time error is emitted if it cannot be evaluated at compile-time.
+A compile-time error is emitted if an expression cannot be evaluated at compile-time.
 
 ```arc
 comptime {
@@ -202,7 +206,7 @@ asm { // RISC-V instructions
 
 Signature: `---`
 
-Used as a fields value to not zero-initialize the field.  
+Used as a field's value to not zero-initialize the field.  
 It is also used as the body of a function to mark it as externally defined.  
 
 ```arc
@@ -231,7 +235,7 @@ external_fn :: fn() ---; // Externally defined function
 | `f64` | 64 | floating-point |
 | `f128` | 128 | floating-point |
 
-*N being the user-defined bit-count
+*N being the user-defined bit-count  
 **native being the bit-count of the target architecture (e.g. 64-bit for x86_64)
 
 ### Pointer
@@ -399,8 +403,7 @@ Resolves names, infers types, executes compile-time expressions, etc
 
 Section: `<name length><name>`
 
-A mangled name is comprised of a file section, -  
-any amount of parent section's, and a definition section
+A mangled name is comprised of a file section, any amount of parent section's, and a definition section
 
 Examples:
 
