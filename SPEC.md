@@ -366,30 +366,34 @@ NOTE: attributes are compile-time
 
 Signature: `#<name>`
 
-### typeid
+### typeid_of
 
-Signature: `#typeid(<type>)`
+Signature: `#typeid_of(<type>)`
+Execution: `Compile Time`
 
 Returns the type's unique `usize` identifier
 
-### typeinfo
+### typeinfo_of
 
-Signature: `#typeinfo(<type>)`
+Signature: `#typeinfo_of(<type>)`
+Execution: `Compile Time`
 
 Returns a struct containing info about the type,  
 including: it's name, struct fields, function parameters, etc
 
-### sizeof
+### size_of
 
-Signature: `#sizeof(<type>)`
+Signature: `#size_of(<type>)`
+Execution: `Compile Time`
 
-Returns the size, in bytes, of the inputted type
+Returns the size in bytes, of the inputted type
 
-### alignof
+### align_of
 
-Signature: `#alignof(<type>)`
+Signature: `#align_of(<type>)`
+Execution: `Compile Time`
 
-Returns the alignment, in bytes, of the inputted type
+Returns the alignment in bytes, of the inputted type
 
 ## Compiler
 
