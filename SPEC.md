@@ -366,16 +366,39 @@ NOTE: attributes are compile-time
 
 Signature: `#<name>`
 
+### Atomics
+
+Signature: `#atomic*(<pointer>, [...], <order>)`  
+Execution: `Runtime`
+
+#### Load, Store
+
+- `atomicLoad(<pointer>, <order>)`  
+- `atomicStore(<pointer>, <data>, <order>)`  
+
+#### Compare Exchange
+
+- `atomicCompareExchange(<pointer>, <expected>, <desired>, <success_order>, <failure_order>)`  
+
+#### Read-Modify-Write
+
+- `atomicFetchAdd(<pointer>, <increment>, <order>)`  
+- `atomicFetchSub(<pointer>, <decrement>, <order>)`
+- `atomicFetchAnd(<pointer>, <rhs>, <order>)`  
+- `atomicFetchOr(<pointer>, <rhs>, <order>)`  
+- `atomicFetchNand(<pointer>, <rhs>, <order>)`  
+- `atomicFetchXor(<pointer>, <rhs>, <order>)`  
+
 ### typeid_of
 
-Signature: `#typeid_of(<type>)`
+Signature: `#typeid_of(<type>)`  
 Execution: `Compile Time`
 
 Returns the type's unique `usize` identifier
 
 ### typeinfo_of
 
-Signature: `#typeinfo_of(<type>)`
+Signature: `#typeinfo_of(<type>)`  
 Execution: `Compile Time`
 
 Returns a struct containing info about the type,  
@@ -383,14 +406,14 @@ including: it's name, struct fields, function parameters, etc
 
 ### size_of
 
-Signature: `#size_of(<type>)`
+Signature: `#size_of(<type>)`  
 Execution: `Compile Time`
 
 Returns the size in bytes, of the inputted type
 
 ### align_of
 
-Signature: `#align_of(<type>)`
+Signature: `#align_of(<type>)`  
 Execution: `Compile Time`
 
 Returns the alignment in bytes, of the inputted type
