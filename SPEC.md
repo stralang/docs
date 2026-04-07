@@ -120,13 +120,38 @@ if result {
 }
 ```
 
-## While
+## For
 
-Signature: `while (<condition>) { ... }`
+Signatures: `for <conditions> { ... }`
+
+Examples:
 
 ```arc
-while true {
-  // Do something
+for i in 0..<100 {
+  // Iterates from 0 to 99
+}
+
+for i in 0..<100; value := iter.next(); value != 100 {
+  // Iterates until `value` is null, `100`, or `i` finishes iterating
+  // NOTE: the output of `iter.next()` must be a pointer
+}
+
+// This is equivalent to the above
+i: usize = 0;
+for { // Forever loop
+  // Check `i`
+  if i == 100 {
+    break;
+  }
+
+  // Get and Check `value`
+  value := iter.next();
+  if value == null || value == 100 {
+    break;
+  }
+
+  // Other Code
+  i = i + 1; // Increment `i`
 }
 ```
 
