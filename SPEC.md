@@ -71,6 +71,20 @@ Example :: enum {
 }
 ```
 
+## Union
+
+Signature: `union [integer_type/void] { <variants/definitions> }`
+
+The tag is placed after the data in memory  
+`void` is used to make C-style (tag-less) unions  
+
+```arc
+Example :: union { // Default tag is `u16`
+  integer: i32,
+  float: f32,
+}
+```
+
 ## Namespace
 
 Signature: `{ <definitions> }`
@@ -248,6 +262,8 @@ and converted to a `slice`: `<identifier>[<range>]` (requires at least `lhs` or 
 
 Signature: `<primitive>x<N>`
 
+Operators treat SIMD as the underlying type
+
 ### Constant
 
 Signature: `const <type>`
@@ -294,20 +310,20 @@ _struct_usage: _struct_type; // the "_struct_type" meta type becomes a `struct` 
 
 ### Arithmetic
 
-| Symbol | Description |
-| ------ | ----------- |
-| `+` | Addition |
-| `-` | Subtraction |
-| `*` | Multiplication |
-| `/` | Division |
-| `%` | Modulo |
-| `\|` | Bitwise Or |
-| `^` | Bitwise Xor |
-| `&` | Bitwise And |
-| `<<` | Bitwise Left Shift |
-| `>>` | Bitwise Right Shift |
-| `\|\|` | Logical Or |
-| `&&` | Logical And |
+| Symbol | Description | Applies To |
+| ------ | ----------- | ---------- |
+| `+` | Addition | Integer, Float |
+| `-` | Subtraction | Integer, Float |
+| `*` | Multiplication | Integer, Float |
+| `/` | Division | Integer, Float |
+| `%` | Modulo | Integer, Float |
+| `\|` | Bitwise Or | Integer |
+| `^` | Bitwise Xor | Integer |
+| `&` | Bitwise And | Integer |
+| `<<` | Bitwise Left Shift | Integer |
+| `>>` | Bitwise Right Shift | Integer |
+| `\|\|` | Logical Or | Bool |
+| `&&` | Logical And | Bool |
 
 ### Equality
 
@@ -328,13 +344,13 @@ _struct_usage: _struct_type; // the "_struct_type" meta type becomes a `struct` 
 
 ### Unary
 
-| Symbol | Description |
-| ------ | ----------- |
-| `-` | Minus |
-| `!` | Logical Not |
-| `~` | Bitwise Not |
-| `&` | Reference |
-| `*` | Dereference |
+| Symbol | Description | Applies To |
+| ------ | ----------- | ---------- |
+| `-` | Minus | Integer, Float |
+| `!` | Logical Not | Bool |
+| `~` | Bitwise Not | Integer |
+| `&` | Reference | * |
+| `*` | Dereference | Pointer |
 
 ### Special
 
