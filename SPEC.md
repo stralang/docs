@@ -1,4 +1,4 @@
-# Arc Programming Language
+# Stra Programming Language
 
 ## Definition
 
@@ -6,7 +6,7 @@ Signature: `<name>: <type> : <default>`
 
 An immutable variable
 
-```arc
+```stra
 a: i32 : 100;
 
 // Infer from value
@@ -19,7 +19,7 @@ Signature: `<name>: <type> = <default>`
 
 A mutable variable
 
-```arc
+```stra
 a: i32 = 100;
 
 // Infer from value
@@ -33,7 +33,7 @@ _const: const i32 = 100; // This is the same as a Definition
 
 Signature: `fn([parameter, ...]) [type] [{ <body> }]`
 
-```arc
+```stra
 main :: fn() {}
 add :: fn(a: i32, b: i32) i32 {
   return a + b;
@@ -44,7 +44,7 @@ add :: fn(a: i32, b: i32) i32 {
 
 Signature: `struct { <fields/definitions> }`
 
-```arc
+```stra
 Vector3 :: struct {
   x: f32,
   y: f32,
@@ -62,7 +62,7 @@ Vector3 :: struct {
 
 Signature: `enum [integer_type] { <enumerators/definitions> }`
 
-```arc
+```stra
 Example :: enum {
   A, // 0
   B, // 1
@@ -78,7 +78,7 @@ Signature: `union [integer_type/void] { <variants/definitions> }`
 The tag is placed after the data in memory  
 `void` is used to make C-style (tag-less) unions  
 
-```arc
+```stra
 Example :: union { // Default tag is `u16`
   integer: i32,
   float: f32,
@@ -89,7 +89,7 @@ Example :: union { // Default tag is `u16`
 
 Signature: `{ <definitions> }`
 
-```arc
+```stra
 Debug :: {
   println :: fn(...) { ... }
 }
@@ -101,7 +101,7 @@ Signature: `return [expression];`
 
 Returns the enclosing function with `[expression]`
 
-```arc
+```stra
 return a + b;
 ```
 
@@ -109,7 +109,7 @@ return a + b;
 
 Signature: `if (<condition>) { ... } [else <else_body>]`
 
-```arc
+```stra
 result: bool = true;
 if result {
   // Then body
@@ -126,7 +126,7 @@ Signatures: `for <conditions> { ... }`
 
 Examples:
 
-```arc
+```stra
 for i in 0..<100 {
   // Iterates from 0 to 99
 }
@@ -159,7 +159,7 @@ for { // Forever loop
 
 Signature: `switch (<input>) { <cases> }`
 
-```arc
+```stra
 switch 1 {
   0 => { ... }
   1 => { ... }
@@ -200,7 +200,7 @@ Functions or expressions with `comptime` appended are evaluated at compile-time.
 
 A compile-time error is emitted if an expression cannot be evaluated at compile-time.
 
-```arc
+```stra
 comptime {
   // Executes at compile-time
 }
@@ -220,7 +220,7 @@ Instructions are architecture specific and cannot be mixed.
 
 NOTE: Assembly cannot execute at compile-time.
 
-```arc
+```stra
 a: const u64 = 10;
 result: u64;
 asm { // RISC-V instructions
@@ -236,7 +236,7 @@ Signature: `---`
 Used as a field's value to not zero-initialize the field.  
 It is also used as the body of a function to mark it as externally defined.  
 
-```arc
+```stra
 // the value of `field` is undefined.
 // for global variables, it will be externally defined
 // NOTE: Uninitialized fields MUST have a known type
@@ -296,7 +296,7 @@ Signature: `const <type>`
 Constant types cannot be assigned to,  
 but constant types can be assigned to non-constant types.
 
-```arc
+```stra
 a: i32 = 100; // Can be assigned
 b: const i32 = 50; // Cannot be assigned
 
@@ -317,7 +317,7 @@ Signature: `type`
 Meta types only get evaluated at compile-time,  
 and MUST have a known underlying type during code generation
 
-```arc
+```stra
 _struct_type: type = struct {}
 _fn_type: type = fn();
 // NOTE: in both cases `type` will be inferred
@@ -474,9 +474,9 @@ A mangled name is comprised of a file section, any amount of parent section's, a
 Examples:
 
 ```
-8main.arc4main
-"main" in file "main.arc"
+8main.strag4main
+"main" in file "main.strag"
 
-11example.arc5Tests4Data
-"Data" in "Tests" in file "example.arc"
+11example.strag5Tests4Data
+"Data" in "Tests" in file "example.strag"
 ```
