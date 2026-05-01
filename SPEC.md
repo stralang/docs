@@ -224,8 +224,8 @@ NOTE: Assembly cannot execute at compile-time.
 a: const u64 = 10;
 result: u64;
 asm { // RISC-V instructions
-  li %t1, 5;
-  add result, a, %t1;
+  li %t1, 5; // load `5` into register `t1`
+  add =result, a, %t1; // add `a` and register `t1` and output to `result`
 }
 ```
 
