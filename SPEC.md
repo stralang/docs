@@ -229,7 +229,7 @@ asm { // RISC-V instructions
 }
 ```
 
-## Uninitialized
+## Undefined
 
 Signature: `---`
 
