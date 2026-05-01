@@ -459,6 +459,10 @@ Execution: `Compile Time`
 
 Returns the alignment in bytes, of the inputted type
 
+### Attributes
+
+- `link_name` - The name used for linking
+
 ## Compiler
 
 ### Evaluator
