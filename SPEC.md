@@ -484,3 +484,8 @@ Examples:
 12example.stra5Tests4Data
 "Data" in "Tests" in file "example.stra"
 ```
+
+## Comments
+
+- `// <comment>` - single-line comment
+- `/* <comment> */` -  multi-line comment
