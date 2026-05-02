@@ -478,9 +478,9 @@ A mangled name is comprised of a file section, any amount of parent section's, a
 Examples:
 
 ```
-8main.strag4main
-"main" in file "main.strag"
+9main.stra4main
+"main" in file "main.stra"
 
-11example.strag5Tests4Data
-"Data" in "Tests" in file "example.strag"
+12example.stra5Tests4Data
+"Data" in "Tests" in file "example.stra"
 ```
