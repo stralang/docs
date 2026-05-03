@@ -403,13 +403,11 @@ Sets `name` attribute to `value` for the next definition
 
 NOTE: attributes are compile-time
 
-## Builtin
-
-Signature: `#<name>`
+## Builtin Package
 
 ### Atomics
 
-Signature: `#atomic*(<pointer>, [...], <order>)`  
+Signature: `atomic*(<pointer>, [...], <order>)`  
 Execution: `Runtime`
 
 #### Load, Store
@@ -432,14 +430,14 @@ Execution: `Runtime`
 
 ### typeid_of
 
-Signature: `#typeid_of(<type>)`  
+Signature: `typeid_of(<type>)`  
 Execution: `Compile Time`
 
 Returns the type's unique `usize` identifier
 
 ### typeinfo_of
 
-Signature: `#typeinfo_of(<type>)`  
+Signature: `typeinfo_of(<type>)`  
 Execution: `Compile Time`
 
 Returns a struct containing info about the type,  
@@ -447,19 +445,19 @@ including: it's name, struct fields, function parameters, etc
 
 ### size_of
 
-Signature: `#size_of(<type>)`  
+Signature: `size_of(<type>)`  
 Execution: `Compile Time`
 
 Returns the size in bytes, of the inputted type
 
 ### align_of
 
-Signature: `#align_of(<type>)`  
+Signature: `align_of(<type>)`  
 Execution: `Compile Time`
 
 Returns the alignment in bytes, of the inputted type
 
-### Attributes
+## Builtin Attributes
 
 - `link_name` - The name used for linking
 
