@@ -461,13 +461,7 @@ Returns the alignment in bytes, of the inputted type
 
 - `link_name` - The name used for linking
 
-## Compiler
-
-### Evaluator
-
-Resolves names, infers types, executes compile-time expressions, etc
-
-### Name Mangling
+## Name Mangling
 
 Section: `<name length><name>`
 
