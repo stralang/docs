@@ -397,11 +397,21 @@ The Range operators are only supported in specific contexts
 
 ## Attributes
 
-Signature: `@<name>(<value>)`
+Signature: `@(<name> [= <value>])`
 
 Sets `name` attribute to `value` for the next definition
 
 NOTE: attributes are compile-time
+
+Example:
+
+```stra
+@(example = "value")
+example_1 :: 1;
+
+@(a = 0, b = 1) // Multiple attributes can be added
+example_2 :: 2;
+```
 
 ## Builtin Package
 
@@ -460,6 +470,7 @@ Returns the alignment in bytes, of the inputted type
 ## Builtin Attributes
 
 - `link_name` - The name used for linking
+- `builtin` - Marks the definition as provided by the compiler
 
 ## Name Mangling
 
