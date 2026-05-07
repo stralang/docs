@@ -194,7 +194,7 @@ Imports the source code at `<path>`, relative to the importer or `<package>`, as
 
 ## Comptime
 
-Signature: `comptime <function/expression>`
+Signature: `comptime <statement/expression>` `$<statement/expression>`
 
 Functions or expressions with `comptime` appended are evaluated at compile-time.  
 
@@ -202,7 +202,7 @@ A compile-time error is emitted if an expression cannot be evaluated at compile-
 
 ```stra
 comptime {
-  // Executes at compile-time
+  // Executes at compile-time, when it's scope is referenced
 }
 
 _comptime_function :: comptime fn() {
@@ -210,6 +210,10 @@ _comptime_function :: comptime fn() {
 }
 
 value: i32 = comptime (1 + 2); // Evaluates to '3' at compile-time
+
+// A compile-time variable with no runtime variable
+// any reference to the variable is replaced with it's value
+$comptime_expr: i32 = 1 + 2;
 ```
 
 ## Assembly
