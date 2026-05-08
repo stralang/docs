@@ -63,7 +63,7 @@ Vector3 :: struct {
 Signature: `enum [integer_type] { <enumerators/definitions> }`
 
 ```stra
-Example :: enum {
+Example :: enum { // Default tag is `u32`
   A, // 0
   B, // 1
   C = 10,
@@ -79,7 +79,7 @@ The tag is placed after the data in memory
 `void` is used to make C-style (tag-less) unions  
 
 ```stra
-Example :: union { // Default tag is `u16`
+Example :: union { // Default tag is `u32`
   integer: i32,
   float: f32,
 }
