@@ -314,16 +314,16 @@ ptr = &100;
 // *ptr = 50; // Error
 ```
 
-### Meta Type
+### TypeId
 
-Signature: `type`
+Signature: `typeid`
 
-Meta types only get evaluated at compile-time,  
+TypeId only gets evaluated at compile-time,  
 and MUST have a known underlying type during code generation
 
 ```stra
-_struct_type: type = struct {}
-_fn_type: type = fn();
+_struct_type: typeid = struct {}
+_fn_type: typeid = fn();
 // NOTE: in both cases `type` will be inferred
 
 _struct_usage: _struct_type; // the "_struct_type" meta type becomes a `struct` type
