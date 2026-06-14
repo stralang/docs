@@ -48,3 +48,21 @@ Signature: `alignOf(<type>)`
 Execution: `Compile Time`
 
 Returns the alignment in bytes, of the inputted type
+
+## Compilation
+
+### Link Library
+
+Signature: `linkLibrary(<name>, <Static, Dynamic>)`
+Execution: `Compile Time`
+
+Links a static/dynamic library to this binary
+
+### Linker Script
+
+Signature: `linkerScript(<path>)`
+Execution: `Compile Time`
+
+Specifies a linker script to be used during the linking phase
+
+NOTE: This should never be used by a library unless explicitly mentioned, or built separately
