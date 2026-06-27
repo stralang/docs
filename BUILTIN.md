@@ -53,16 +53,30 @@ Returns the alignment in bytes, of the inputted type
 
 ### Link Library
 
-Signature: `linkLibrary(<name>, <Static, Dynamic>)`
+Signature: `linkLibrary(<name>, <Static, Dynamic>)`  
 Execution: `Compile Time`
 
 Links a static/dynamic library to this binary
 
+### Link Directory
+
+Signature: `linkDirectory(<path>)`  
+Execution: `Compile Time`
+
+Adds a path to a library directory to the linker
+
 ### Linker Script
 
-Signature: `linkerScript(<path>)`
+Signature: `linkerScript(<path>)`  
 Execution: `Compile Time`
 
 Specifies a linker script to be used during the linking phase
 
 NOTE: This should never be used by a library unless explicitly mentioned, or built separately
+
+### Linker Flags
+
+Signature: `linkerFlags(<flags>)`  
+Execution: `Compile Time`
+
+Passes user-provided flags to the linker
