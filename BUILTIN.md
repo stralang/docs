@@ -25,6 +25,43 @@ Execution: `Runtime`
 - `atomicFetchNand(<pointer>, <rhs>, <order>)`  
 - `atomicFetchXor(<pointer>, <rhs>, <order>)`  
 
+## Target
+
+### Arch
+
+Name: `TARGET_ARCH`
+Type: `u8`; integer or enum
+
+The target's architecture
+
+### OS
+
+Name: `TARGET_OS`
+Type: `u8`; integer or enum
+
+The target's operating system
+
+### Sub OS
+
+Name: `TARGET_SUB_OS`
+Type: `u8`; integer or enum
+
+The target's sub operating system
+
+### Vendor
+
+Name: `TARGET_VENDOR`
+Type: `[]u8`
+
+A string of the target system's vendor
+
+### Endian
+
+Name: `TARGET_ENDIAN`
+Type: `u8`; integer or enum
+
+The target system's endianness
+
 ## Type
 
 ### typeInfoOf
