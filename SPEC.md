@@ -419,8 +419,8 @@ example_2 :: 2;
 
 ## Builtin Attributes
 
-- `link_name` - The name used for linking
-- `builtin` - Marks the definition as provided by the compiler
+- `link_name = [string]` - Overrides the linkage name. If no name is provided the name of the field is used.
+- `builtin = [string]` - Compiler defined field. If no name is provided then `link_name` or `field name` is used.
 
 ## Name Mangling
 
