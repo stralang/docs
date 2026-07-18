@@ -428,14 +428,17 @@ Section: `<name length><name>`
 
 A mangled name is comprised of a file section, any amount of parent section's, and a definition section
 
+The "file section" is the source's path relative to the main source,  
+without the extension and with `.`, `/`, and `\` replaced with `_`  
+
 Examples:
 
 ```
-9main.stra4main
+9main4main
 "main" in file "main.stra"
 
-12example.stra5Tests4Data
-"Data" in "Tests" in file "example.stra"
+12___example5Tests4Data
+"Data" in "Tests" in file "../example.stra"
 ```
 
 ## Comments
