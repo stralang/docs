@@ -434,10 +434,10 @@ without the extension and with `.`, `/`, and `\` replaced with `_`
 Examples:
 
 ```
-9main4main
+4main4main
 "main" in file "main.stra"
 
-12___example5Tests4Data
+10___example5Tests4Data
 "Data" in "Tests" in file "../example.stra"
 ```
 
