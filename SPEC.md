@@ -51,8 +51,8 @@ Vector3 :: struct {
   z: f32,
 
   // You can `<self>.add(<lhs>)`, -
-  // if the first parameter is a pointer to the struct (`&Vector3` or `&const Vector3`)
-  add :: fn(self: &Vector3, lhs: &const Vector3) {
+  // if the first parameter is a pointer to the struct (`^Vector3` or `^const Vector3`)
+  add :: fn(self: ^Vector3, lhs: ^const Vector3) {
     ...
   }
 }
@@ -309,9 +309,9 @@ b: const i32 = 50; // Cannot be assigned
 a = a + b;
 
 // `ptr` can be assigned to, but not the pointed-to value
-ptr: &const i32;
-ptr = &100;
-// *ptr = 50; // Error
+ptr: ^const i32;
+ptr = &b;
+// ptr^ = 100; // Error
 ```
 
 ### TypeId
