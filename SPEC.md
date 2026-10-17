@@ -271,7 +271,7 @@ external_fn :: fn() ---; // Externally defined function
 
 ### Pointer
 
-Signature: `&<type>`
+Signature: `^<type>`
 
 ### Array/Slice
 
@@ -282,7 +282,7 @@ A `slice` is a pointer whose length is stored with it.
 A `pointer array` is a helper type to allow indexing into pointers.  
 
 If `<length>` is not provided then it's a `slice`.  
-If `<length>` is `*` then it's a `pointer slice`.  
+If `<length>` is `^` then it's a `pointer slice`.  
 
 An `array`/`slice` can be indexed: `<identifier>[<index>]`, -  
 and converted to a `slice`: `<identifier>[<range>]` (requires at least `lhs` or `rhs`)
@@ -347,7 +347,7 @@ _struct_usage: _struct_type; // the "_struct_type" meta type becomes a `struct` 
 | `/` | Division | Integer, Float |
 | `%` | Modulo | Integer, Float |
 | `\|` | Bitwise Or | Integer |
-| `^` | Bitwise Xor | Integer |
+| `~` | Bitwise Xor | Integer |
 | `&` | Bitwise And | Integer |
 | `<<` | Bitwise Left Shift | Integer |
 | `>>` | Bitwise Right Shift | Integer |
@@ -379,7 +379,8 @@ _struct_usage: _struct_type; // the "_struct_type" meta type becomes a `struct` 
 | `!` | Logical Not | Bool |
 | `~` | Bitwise Not | Integer |
 | `&` | Reference | * |
-| `*` | Dereference | Pointer |
+| `^<type>` | Make Type | TypeId |
+| `<ptr>^` | Dereference | Pointer |
 
 ### Special
 
